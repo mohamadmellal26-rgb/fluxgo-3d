@@ -1,0 +1,112 @@
+/* Container Section */
+.bento-section {
+  width: 100%;
+  padding: 100px 24px;
+  background-color: #000000;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: #ffffff;
+}
+
+.bento-container {
+  width: 100%;
+  max-width: 1280px;
+}
+
+/* Grid Layout */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  width: 100%;
+}
+
+/* Card Styling */
+.bento-card {
+  background-color: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  padding: 12px; /* حشوة داخلية للبطاقة تعطي مسافة (margin) حول الصورة/الفيديو */
+}
+
+.bento-card:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Media Wrapper (تمت إضافة border-radius وانحناء الحواف للوسائط) */
+.bento-media-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  position: relative;
+  overflow: hidden;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px; /* انحناء الزوايا الخاص بحاوية الفيديو أو الصورة */
+}
+
+/* Video & Image Media Elements */
+.bento-video,
+.bento-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit; /* تطابق انحناء الزوايا مع الحاوية */
+}
+
+/* Content Area */
+.bento-content {
+  padding: 24px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bento-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.bento-desc {
+  font-size: 15px;
+  font-weight: 400;
+  color: #8e8e93;
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .bento-section {
+    padding: 60px 16px;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .bento-card {
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  .bento-media-wrapper {
+    border-radius: 14px;
+  }
+
+  .bento-content {
+    padding: 16px 12px 12px 12px;
+  }
+}

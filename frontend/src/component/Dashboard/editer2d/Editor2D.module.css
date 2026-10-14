@@ -1,0 +1,220 @@
+.editorLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  border-bottom: 1px solid #222;
+  background: #0f0f0f;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.appBadge3d {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #ec4899);
+}
+
+.title {
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: #222;
+  color: #aaa;
+  border: 1px solid #333;
+}
+
+.exportBtn {
+  background: #222;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px; /* تصحيح */
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.workspace {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 280px;
+  background: #0d0d0d;
+  border-right: 1px solid #222;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.sidebarTitle {
+  font-size: 15px;
+  color: #888;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section {
+  background: #141414;
+  padding: 12px;
+  border-radius: 8px; /* تصحيح */
+  border: 1px solid #222;
+}
+
+.sectionTitle {
+  display: block;
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 8px; /* تصحيح */
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.toolBtn {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px; /* تصحيح */
+  cursor: pointer;
+  text-align: left;
+  font-size: 13px;
+}
+
+.uploadLabel {
+  background: #1c1c1c;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px; /* تصحيح */
+  cursor: pointer;
+  text-align: left;
+  display: block;
+  font-size: 13px;
+}
+
+.propertyRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.propertyLabel {
+  font-size: 12px;
+  color: #ccc;
+}
+
+.colorInput {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.selectInput,
+.numberInput {
+  width: 100%;
+  padding: 6px;
+  border-radius: 4px; /* تصحيح */
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+  font-size: 13px;
+}
+
+.rangeInput {
+  width: 100%;
+}
+
+.cropInfo {
+  font-size: 11px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.applyBtn {
+  width: 100%;
+  background: #ffffff;
+  color: #000;
+  border: none;
+  padding: 6px;
+  border-radius: 4px; /* تصحيح */
+  font-weight: bold; /* تصحيح */
+  cursor: pointer;
+  margin-bottom: 6px; /* تصحيح */
+}
+
+.cancelBtn {
+  width: 100%;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 6px;
+  border-radius: 4px; /* تصحيح */
+  cursor: pointer;
+}
+
+.footerActions {
+  margin-top: auto; /* تصحيح */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px; /* تصحيح */
+}
+
+.deleteBtn {
+  background: #2a1212;
+  border: 1px solid #522;
+  color: #f88;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.canvasArea {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #080808;
+}
+
+.canvasWrapper {
+  padding: 8px;
+  background: #ffff;
+  border-radius: 10px;
+  border: 1px solid #222;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}

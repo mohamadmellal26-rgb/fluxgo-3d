@@ -1,0 +1,188 @@
+/* Container Section */
+.showcase-section {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #0d0d0f;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Header Text */
+.showcase-header {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 56px;
+  padding: 0 24px;
+}
+
+.showcase-title {
+  font-size: 48px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px 0;
+}
+
+.title-muted {
+  color: #a1a1aa;
+  font-weight: 800;
+}
+
+.title-bold {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.showcase-subtitle {
+  font-size: 16px;
+  color: #8e8e93;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Rows Wrapper & Marquee Track */
+.rows-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.marquee-row {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+}
+
+/* تم إزالة قاعدة التوقف عند الـ Hover هنا تماماً لتبقى الحركة مستمرة */
+
+/* Moving Left Animation */
+.row-left .marquee-track {
+  animation: scrollLeft 35s linear infinite;
+}
+
+/* Moving Right Animation */
+.row-right .marquee-track {
+  animation: scrollRight 35s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Individual Card Styling */
+.showcase-card {
+  width: 280px;
+  background-color: #1a1b1e;
+  border-radius: 16px;
+  padding: 12px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Card Image Frame */
+.card-image-wrapper {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #26272b;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+
+
+/* Card Footer Info (Title & Author) */
+.card-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 4px 4px 4px;
+}
+
+.author-avatar-placeholder {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-author {
+  font-size: 13px;
+  color: #8a8a93;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .showcase-title {
+    font-size: 32px;
+  }
+  .showcase-subtitle {
+    font-size: 14px;
+  }
+  .showcase-card {
+    width: 240px;
+  }
+  .card-image-wrapper {
+    height: 150px;
+  }
+}

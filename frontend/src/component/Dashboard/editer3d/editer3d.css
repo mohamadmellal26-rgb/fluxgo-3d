@@ -1,0 +1,407 @@
+/* editer.css - واجهة محرر 3D داكنة ومحايدة بالكامل (بدون أي ألوان زرقاء) */
+
+.editor-3d-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #0d0d0d;
+  color: #e5e5e5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* الشريط العلوي */
+.editor-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background-color: #141414;
+  border-bottom: 1px solid #262626;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* اللوجو الأصلي بالتدرج الجميل */
+.app-badge-3d {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #ec4899);
+}
+
+.editor-topbar h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #ffffff;
+}
+
+.project-status {
+  font-size: 0.75rem;
+  color: #a3a3a3;
+  background-color: #1f1f1f;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid #333333;
+}
+
+/* شريط الأدوات الرئيسي */
+.topbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #171717;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid #262626;
+}
+
+.tool-btn {
+  background: transparent;
+  border: none;
+  color: #a3a3a3;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tool-btn:hover {
+  background-color: #262626;
+  color: #ffffff;
+}
+
+.tool-btn.active {
+  background-color: #404040;
+  color: #ffffff;
+  border: 1px solid #525252;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.editor-btn-secondary, .editor-btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.editor-btn-secondary {
+  background-color: #1f1f1f;
+  color: #d4d4d4;
+  border: 1px solid #333333;
+}
+
+.editor-btn-secondary:hover {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.editor-btn-primary {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #525252;
+}
+
+.editor-btn-primary:hover {
+  background-color: #404040;
+}
+
+/* مساحة العمل */
+.editor-workspace-3d {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* الشريط الجانبي الأيسر */
+.sidebar-left-3d {
+  width: 260px;
+  background-color: #141414;
+  border-right: 1px solid #262626;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.sidebar-left-3d h3 {
+  font-size: 0.85rem;
+  color: #a3a3a3;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.add-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-primitive-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #d4d4d4;
+  padding: 0.75rem 0.4rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-primitive-btn:hover {
+  background-color: #333333;
+  border-color: #525252;
+  color: #ffffff;
+}
+
+.scene-layers-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.layers-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #a3a3a3;
+  margin-bottom: 0.5rem;
+}
+
+.layers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.layer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #1a1a1a;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  color: #d4d4d4;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.layer-item:hover {
+  background-color: #262626;
+  color: #ffffff;
+}
+
+.layer-item.active {
+  background-color: #262626;
+  border-color: #525252;
+  color: #ffffff;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* مساحة العرض (Viewport) */
+.viewport-3d {
+  flex: 1;
+  position: relative;
+  background-color: #080808;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.viewport-overlay-info {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #a3a3a3;
+  background: rgba(20, 20, 20, 0.9);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  border: 1px solid #333333;
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+.fps-counter {
+  color: #a3a3a3;
+}
+
+/* الشريط الجانبي الأيمن (الخصائص) */
+.sidebar-right-3d {
+  width: 280px;
+  background-color: #141414;
+  border-left: 1px solid #262626;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #a3a3a3;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.delete-obj-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.delete-obj-btn:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+}
+
+.properties-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.prop-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.prop-group label {
+  font-size: 0.8rem;
+  color: #a3a3a3;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.prop-input {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #ffffff;
+  padding: 0.55rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.prop-input:focus {
+  border-color: #525252;
+}
+
+.color-picker-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.color-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-swatch.selected {
+  border-color: #ffffff;
+  transform: scale(1.15);
+}
+
+.position-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+}
+
+.axis-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.axis-control span {
+  font-size: 0.7rem;
+  color: #737373;
+}
+
+.axis-input {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #e5e5e5;
+  padding: 0.4rem;
+  border-radius: 0.35rem;
+  font-size: 0.8rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.axis-input:focus {
+  border-color: #525252;
+}
+
+/* إزالة اللون الأزرق من أزرار أسهم الحقول العددية (Number Input Spinners) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  filter: invert(1) grayscale(1);
+  opacity: 0.6;
+}
+
+.no-selection {
+  color: #737373;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 2rem;
+}

@@ -1,0 +1,100 @@
+/* Container Section */
+.testimonial-section {
+  width: 100%;
+  padding: 120px 24px;
+  background-color: #060606;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: #ffffff;
+}
+
+.testimonial-container {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+}
+
+/* Company / Brand Header */
+.testimonial-brand {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* Main Quote Styling - الحجم الكبير المتناسق تماماً مثل التصميم المرجعي */
+.testimonial-quote {
+  font-size: clamp(32px, 4.2vw, 48px);
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0;
+  padding: 0;
+  max-width: 880px;
+}
+
+/* Text Variations (Highlight vs Normal) */
+.testimonial-quote .muted-text {
+  color: #ffffff; /* النص الأبيض الأساسي */
+}
+
+.testimonial-quote .highlighted-text {
+  color: #797979; /* اللون الرمادي المطفأ الهادئ الموجود في التصميم الأصلي */
+  transition: color 0.3s ease;
+}
+
+/* Author Section */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.author-info {
+  display: flex;
+  align-items: baseline;
+  font-size: 15px;
+}
+
+.author-name {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.author-role {
+  font-weight: 400;
+  color: #7d7d8a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .testimonial-section {
+    padding: 80px 16px;
+  }
+  
+  .testimonial-container {
+    gap: 24px;
+  }
+
+  .author-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+}

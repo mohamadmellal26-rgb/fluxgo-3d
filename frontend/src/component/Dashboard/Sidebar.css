@@ -1,0 +1,171 @@
+/* Sidebar.css - تصميم الشريط الجانبي الأبيض بدون حدود */
+.sidebar-container {
+  width: 280px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  user-select: none;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* بروفايل المستخدم */
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-profile:hover {
+  background-color: #f9fafb;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.profile-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background-color: #8755ff;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+  box-shadow: 0 2px 8px rgba(135, 85, 255, 0.25);
+}
+
+.profile-name {
+  font-weight: 600;
+  color: #111827;
+  font-size: 1rem;
+}
+
+.profile-arrow {
+  width: 1rem;
+  height: 1rem;
+  color: #9ca3af;
+}
+
+/* القائمة الرئيسية */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.75rem;
+  color: #4b5563;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #111827;
+  background-color: #f9fafb;
+}
+
+.nav-item.active {
+  color: #111827;
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+.nav-item svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #6b7280;
+}
+
+.nav-item.active svg {
+  color: #111827;
+}
+
+/* بطاقة دعوة صديق */
+.refer-card {
+  background-color: #f9fafb;
+  border: 1px solid #f3f4f6;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.refer-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #111827;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.refer-header svg {
+  width: 1rem;
+  height: 100%;
+  color: #8755ff;
+  fill: #8755ff;
+}
+
+.refer-btn {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background-color: #8755ff;
+  color: #ffffff;
+  border: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(135, 85, 255, 0.25);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.refer-btn:hover {
+  background-color: #7644e5;
+}
+
+.refer-btn:active {
+  transform: scale(0.98);
+}
+
+/* القسم السفلي */
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+}

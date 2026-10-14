@@ -1,0 +1,192 @@
+/* Container Section (بادينج مريح مع مسافة مضبوطة) */
+.community-section {
+  width: 100%;
+  padding: 50px 24px;
+  background-color: #000000;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: #ffffff;
+}
+
+.community-container {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Main Layout Grid */
+.community-main-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Left Info Column */
+.community-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding-top: 12px;
+}
+
+.community-icon-wrapper {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.community-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.community-desc {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #8e8e93;
+  margin: 0 0 8px 0;
+}
+
+.community-btn {
+  background-color: #007aff; /* اللون الأزرق الخاص بزر Spline */
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.community-btn:hover {
+  background-color: #0062cc;
+}
+
+/* Right Grid: 6 Cards (3 Columns x 2 Rows) */
+.community-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.community-card {
+  background-color: #050507;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.community-card-preview {
+  width: 100%;
+  height: 82%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.community-card-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.community-card-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.community-card-bar {
+  width: 40%;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  margin-top: 6px;
+}
+
+/* Bottom Resources Row (4 Cards) */
+.community-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.resource-card {
+  background-color: #050507;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 20px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.resource-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.resource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resource-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.resource-arrow {
+  color: #6b6b76;
+}
+
+.resource-desc {
+  font-size: 13px;
+  color: #8e8e93;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .community-main-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .community-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .community-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .community-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
