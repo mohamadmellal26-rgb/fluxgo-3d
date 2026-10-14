@@ -55,10 +55,17 @@ type AuthResponse struct {
 // متغير قاعدة البيانات العام
 var db *sql.DB
 
-// تهيئة قاعدة البيانات وإنشاء الجداول تلقائياً
+// تهيئة قاعدة البيانات وإنشاء الجداول تلقائياً بمسار ذكي سحابياً ومحلياً
 func initDatabase() {
     var err error
-    db, err = sql.Open("sqlite", "./fluxgo.db")
+    
+    // تحديد مسار قاعدة البيانات: /tmp للسحاب لتجنب مشاكل الصلاحيات، ومحلياً حسب الحاجة
+    dbPath := "./fluxgo.db"
+    if os.Getenv("PORT") != "" {
+        dbPath = "/tmp/fluxgo.db"
+    }
+
+    db, err = sql.Open("sqlite", dbPath)
     if err != nil {
         log.Fatalf("❌ Failed to connect to database: %v", err)
     }
@@ -111,7 +118,7 @@ func initDatabase() {
         log.Fatalf("❌ Failed to create sessions table: %v", err)
     }
 
-    fmt.Println("📦 SQLite Database initialized successfully (fluxgo.db)")
+    fmt.Printf("📦 SQLite Database initialized successfully (%s)\n", dbPath)
 }
 
 // Middleware لدعم CORS والسماح لطلبات React بالوصول للسيرفر
@@ -287,7 +294,7 @@ func projectsHandler(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    // طلب POST: إنشاء مشروع جديد وحفظه في قاعدة البيانات
+    // طلب طلب POST: إنشاء مشروع جديد وحفظه في قاعدة البيانات
     if r.Method == http.MethodPost {
         var req CreateProjectRequest
         err := json.NewDecoder(r.Body).Decode(&req)
@@ -365,7 +372,7 @@ func main() {
     // مسار المشاريع يدعم GET و POST محمي بـ Auth Middleware
     http.HandleFunc("/api/projects", enableCORS(authMiddleware(projectsHandler)))
 
-    // التقاط المنفذ المخصص من منصات الاستضافة السحابية (مثل Render) أو استخدام 8080 محلياً
+    // التقاط المنفذ الديناميكي لبيئة السحاب أو محلياً
     port := os.Getenv("PORT")
     if port == "" {
         port = "8080"
